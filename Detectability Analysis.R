@@ -55,38 +55,4 @@ names(df2) <- c("SiteStnName", "sYEAR", "JulianDate", "HOURofDAY")
 
 
 fulldf <-rbind(df, df2)
-
-# Initialize empty dataframes
-data.wide <- list(detections = matrix(NA, nrow = M, ncol = J),
-                  obs.cov = list(),
-                  site.cov = as.data.frame(matrix(nrow = M, ncol = ncol(.site.covariates))))
-names(data.wide$site.cov) <- names(.site.covariates)
-
-# Initialize observation covariate data.frames
-obs.cov.names <- names(.obs.covariates)
-for(i in 1:length(obs.cov.names)){
-  data.wide$obs.cov[[i]] <- as.data.frame(matrix(nrow = M, ncol = J))
-}
-names(data.wide$obs.cov) <- obs.cov.names
-
-
-gooddf <- data.frame(recog$ShortName, recog$JulianDate, recog$HOURofDAY, recog$MINUTEOFFSET, recog$SECONDOFFSET, recog$'TRUE', recog$Recognizer)
-
-aggrecog <- aggregate(gooddf, list(unique.values = recog$ShortName), FUN = length)
-aggrecog <- aggregate()
-
-##### WORK WITH THE LIST OF ALL FILES
-
-
-
-##### GET JULIAN DATE FROM FILENAME
-
-
-
-#TimeOffset
-#MINUTEOFFSET <- substr(recog$TimeOffset,1,2)
-#SECONDOFFSET <- substr(recog$TimeOffset,4,5)
-
-##### MAKE A WORKING DATAFRAME
-
-all_gooddf <- data.frame(allfiles$ShortName, allfiles$JulianDate, allfiles$HOURofDAY)
+fulldf <-rbind(df, df2)
