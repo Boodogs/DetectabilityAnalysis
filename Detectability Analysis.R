@@ -55,4 +55,3 @@ names(df2) <- c("SiteStnName", "sYEAR", "JulianDate", "HOURofDAY")
 
 
 fulldf <-rbind(df, df2)
-fulldf <-rbind(df, df2)
