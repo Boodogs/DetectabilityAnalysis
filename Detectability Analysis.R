@@ -44,6 +44,11 @@ recog$JulianDate <- yday(as.Date(my_date))
 recog$SiteStnName <- parsedname[,1]
 recog$sYEAR <- substr(parsedname[,2], 1,4)
 
+##### Take only 10 minute files....
+
+
+#####
+
 df <- data.frame(allfiles$SiteStnName, allfiles$sYEAR, allfiles$JulianDate, allfiles$HOURofDAY)
 df2 <- data.frame(recog$SiteStnName, recog$sYEAR, recog$JulianDate, recog$HOURofDAY)
 

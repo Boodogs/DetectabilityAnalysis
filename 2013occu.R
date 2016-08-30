@@ -17,4 +17,7 @@ summary(fm2)
 
 fms <- fitList(m1 = fm2)
 
+newdata2 <- data.frame(hours = hoursdf[,2:length(hoursdf)])
+p <- predict(fms, type= "det", newdata = newdata2, appendData = TRUE)
+
 exp(-0.0964*hours + -0.0176*days + 2.0595)/(1 + exp(-0.0964*hours + -0.0176*days + 2.0595))
